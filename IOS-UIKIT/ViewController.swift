@@ -29,6 +29,15 @@ class ViewController: UIViewController {
             
             return button
         }()
+    
+    private let centerLabel: UILabel = {
+        
+        let label = UILabel()
+        label.text = "중앙 레이블"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
 
     
     override func viewDidLoad() {
@@ -38,6 +47,7 @@ class ViewController: UIViewController {
     
     private func setupLayout() {
             view.addSubview(centerButton)
+            view.addSubview(centerLabel)
             
             // 오토레이아웃 설정
             NSLayoutConstraint.activate([
@@ -46,7 +56,15 @@ class ViewController: UIViewController {
                 centerButton.widthAnchor.constraint(equalToConstant: 200),
                 centerButton.heightAnchor.constraint(equalToConstant: 50)
             ])
-        }
+        
+            // 오토레이아웃 설정
+            NSLayoutConstraint.activate([
+                centerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                centerLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                centerLabel.widthAnchor.constraint(equalToConstant: 200),
+                centerLabel.heightAnchor.constraint(equalToConstant: 50)
+            ])
+    }
 
 
 }
