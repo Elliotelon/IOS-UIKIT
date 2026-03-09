@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        let example = UIViewExample()
+        let example = UIImageViewExample()
         
         example.translatesAutoresizingMaskIntoConstraints = false
         
